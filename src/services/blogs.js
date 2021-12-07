@@ -1,5 +1,7 @@
 import { checkError, client } from './client';
 
-export default function getBlogs() {
-  return <div></div>;
+export async function getBlogs() {
+  // call supabase and get blog cards
+  const response = await client.from('blogs').select();
+  return checkError(response);
 }
