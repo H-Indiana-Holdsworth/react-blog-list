@@ -9,6 +9,7 @@ import BlogCard from './components/BlogCard/BlogCard';
 
 function App() {
   const [blogs, setBlogs] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       const data = await getBlogs();
@@ -16,6 +17,7 @@ function App() {
     };
     fetchData();
   }, []);
+
   return (
     <section className="main">
       <Header />
